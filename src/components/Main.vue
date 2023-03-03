@@ -22,6 +22,11 @@ export default {
             console.log('fetching data')
             //fare la chiamata in get all'end point:
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+                .then((res) => {
+                    console.log(res.data.data)
+                    this.characters = res.data.data
+
+                })
         }
     },
     created() {
@@ -34,5 +39,6 @@ export default {
 <style lang="scss" scoped>
 .main {
     padding: 100px 0;
+    background-color: chocolate;
 }
 </style>
