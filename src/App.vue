@@ -1,15 +1,13 @@
 <template>
-  <div>
-    YU-GI-OH
-  </div>
+  <Header />
 </template>
 
 <script>
+import Header from './components/Header.vue';
+
 export default {
-  setup() {
-
-
-    return {}
+  components: {
+    Header
   }
 }
 </script>
