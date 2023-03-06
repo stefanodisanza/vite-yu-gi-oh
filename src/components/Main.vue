@@ -1,11 +1,13 @@
 <template>
     <main class="main">
         <ul class="container">
-            <li v-for="character in characters" :key="character.id" class="card">
+            <!-- <li v-for="character in characters" :key="character.id" class="card">
                 <img :src="character.card_images[0].image_url" alt="">
                 <h3>{{ character.name }}</h3>
                 <h5>{{ character.archetype }}</h5>
-            </li>
+            </li> -->
+            <Character v-for="element in characters" :key="element.id" :character="element" />
+
         </ul>
     </main>
 </template>
@@ -13,7 +15,13 @@
 <script>
 import axios from 'axios'
 
+import Character from './Character.vue'
+
 export default {
+    components: {
+        Character
+    },
+
     data() {
         return {
             characters: []
@@ -62,6 +70,7 @@ img {
     border: 4px solid black;
     background-color: darkolivegreen;
 }
+
 
 h5 {
     margin-bottom: 20px;
