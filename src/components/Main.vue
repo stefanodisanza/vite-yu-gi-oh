@@ -1,5 +1,11 @@
 <template>
     <main class="main">
+        <div class="container">
+            <Filters />
+        </div>
+        <div class="container">
+            {{ store.search }}
+        </div>
         <ul class="container">
             <!-- <li v-for="character in characters" :key="character.id" class="card">
                 <img :src="character.card_images[0].image_url" alt="">
@@ -15,11 +21,17 @@
 <script>
 import axios from 'axios'
 
+import store from '../store'
+
 import Character from './Character.vue'
+import Filters from './Filters.vue'
+
+
 
 export default {
     components: {
-        Character
+        Character,
+        Filters
     },
 
     data() {
